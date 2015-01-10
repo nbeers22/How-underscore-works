@@ -4,6 +4,7 @@ $(document).ready(function(){
 	var uniqArray = _.uniq(arrayBeforeUniq);
 	var objectArray = [{name: "Bob",age:25},{name:"Tom",age:55},{name:"Sarah",age:14}];
 	var objectArrayPlucked = _.pluck(objectArray,'age');
+	var mappedArray = _(arrayBeforeUniq).map(function(num){return num * 10});
 
 	// uniq
 	$('#uniq-answer').text("[" + arrayBeforeUniq + "]");
@@ -31,6 +32,10 @@ $(document).ready(function(){
 	$('#map-answer').text("[" + arrayBeforeUniq + "]")
 
 	$('#map').on('click',function(){
-		
+		$('#map-answer').text("[" + mappedArray + "]")
+	});
+
+	$('#unmap').on('click',function(){
+		$('#map-answer').text("[" + arrayBeforeUniq + "]")
 	});
 });
